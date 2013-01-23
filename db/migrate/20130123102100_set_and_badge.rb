@@ -1,7 +1,7 @@
 class SetAndBadge < ActiveRecord::Migration
   def up
     create_table :badge_sets do |t|
-      t.string :name
+      t.string :name, :null => false 
       t.string :image
       
       t.timestamps
