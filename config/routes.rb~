@@ -1,7 +1,0 @@
-Badgenator::Application.routes.draw do
-  match 'contacts' => 'welcome#contacts', :as => :contacts
-  match 'archive' => 'badge_sets#create'
-  match 'archive/new' => 'badge_sets#new'
-  
-  root :to => 'welcome#index'
-end
