@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(:version => 20130123102100) do
     t.datetime "updated_at",   :null => false
   end
 
+  add_index "badges", ["badge_set_id"], :name => "index_badges_on_badge_set_id"
+
   create_table "table", :force => true do |t|
     t.string   "column",     :null => false
     t.datetime "created_at", :null => false

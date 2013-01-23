@@ -13,9 +13,11 @@ class SetAndBadge < ActiveRecord::Migration
       t.string :company
       t.string :profession
       t.integer :badge_set_id
-      
+             
       t.timestamps
     end
+    
+    add_index :badges, :badge_set_id 
   end
 
   def down
@@ -23,3 +25,5 @@ class SetAndBadge < ActiveRecord::Migration
     drop_table :badges
   end
 end
+
+
