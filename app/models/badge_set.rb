@@ -10,5 +10,5 @@ class BadgeSet < ActiveRecord::Base
   has_many :badges, :dependent => :destroy 
   
   
-  validates :name, presence: true
+  validates :name, presence: true, :length => { :minimum => 2, :maximum => 50 }
 end
