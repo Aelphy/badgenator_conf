@@ -51,7 +51,7 @@ SimpleNavigation::Configuration.run do |navigation|
     #
       primary.item :home, 'Дома', '/'
       primary.item :archive, 'Архив', '/archive', :highlights_on => :subpath 
-      primary.item :contacts, 'Кто все эти парни ?', '/contacts' 
+      primary.item :contacts, 'Кто эти парни?', '/contacts' 
     # Add an item which has a sub navigation (same params, but with block)
     #primary.item :key_2, 'name', url, options do |sub_nav|
       # Add an item to the sub navigation (same params again)

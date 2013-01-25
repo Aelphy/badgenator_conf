@@ -15,4 +15,6 @@ Badgenator::Application.routes.draw do
   end 
    
   root :to => 'welcome#index'
+  
+  match '*path' => 'not_found#index'
 end
