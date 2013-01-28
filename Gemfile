@@ -9,6 +9,8 @@ gem 'haml'
 gem 'haml-rails'
 gem 'russian'
 
+gem 'debugger'
+ 
 gem 'carrierwave'
 gem 'rmagick'
 
