@@ -1,11 +1,15 @@
-- if notice.present?
-  .alert.alert-success{data: {autoclose: true}}
-    = notice
+- if @badge.errors.any?
+  .alert.alert-danger.alert-block
+    %h4 
+      %ol 
+        - @badge.errors.full_messages.each do |message|
+          %li= message
 
 .btn-group.action-buttons
-  %button.btn{data: {click: "/"}}
+  %button.btn{data: {click: badge_set_badges_url}}
     = t 'forms.labels.back'
-  %button.btn.btn-primary{data: {click: "#"}}
+  %button.btn.btn-primary{data: {click:  edit_badge_set_badge_url(@badge)}}
     = t 'forms.labels.edit'
-
-= render partial: 'badge'
+  %br
+  %br
+  = render partial: 'badge'

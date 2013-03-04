@@ -38,6 +38,6 @@
               %li
                 = link_to t('forms.labels.edit'), edit_badge_set_badge_url(badge.badge_set_id, badge)
               %li
-                = link_to t('forms.labels.delete'), :badge_set_id => badge.badge_set_id, :id => badge, onclick: "alert('O, RLY!?')", method: :delete
+                = link_to t('forms.labels.delete'), badge_set_badge_url(badge.badge_set_id, badge), onclick: "alert('O, RLY!?')", method: :delete
 
 =paginate @badges
