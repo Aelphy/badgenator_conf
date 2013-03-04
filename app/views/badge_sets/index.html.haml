@@ -3,7 +3,7 @@
     = notice
 
 .row
-  = link_to t('views.badge_sets.links.add_set'), "#", class: 'btn btn-large btn-primary pull-right'
+  = link_to t('views.badge_sets.links.add_set'), new_badge_set_url, class: 'btn btn-large btn-primary pull-right'
 %br/
 
 %table.table.table-hover
@@ -22,17 +22,17 @@
         %td= bs.name
         %td
           .btn-group
-            %button.btn{data: {click: "#"}}= t('forms.labels.see')
+            %button.btn{data: {click: badge_set_badges_url(bs)}}= t('forms.labels.see')
             %button.btn.dropdown-toggle{'data-toggle' => "dropdown"}
               %span.caret
             
             %ul.dropdown-menu
               %li
-                = link_to t('forms.labels.print'), "#"
+                = link_to t('forms.labels.print'), print_bs_url(bs)
               %li
-                = link_to t('forms.labels.edit'), "#"
+                = link_to t('forms.labels.edit'), edit_badge_set_url(bs)
               %li
-                = link_to t('forms.labels.delete'), "#", onclick: "alert('O, RLY!?')"
+                = link_to t('forms.labels.delete'), bs, onclick: "alert('O, RLY!?')", method: :delete
     
 =paginate @badge_sets
       

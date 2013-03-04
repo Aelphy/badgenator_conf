@@ -1,15 +1,15 @@
 Badgenator::Application.routes.draw do
-  match 'contacts' => 'welcome#contacts', :as => :contacts
+  match 'contacts' => 'welcome#contacts', :as => :contacts, :via => :get
 
-  #ceты
-  resources :archive, :controller => :badge_sets
-  match 'archive/page/:page' => 'badge_sets#index', :via => :get
+  match 'archive/:id/print' => 'badge_sets#print', :via => :get, :as => :print_bs
 
-  #бэйджи
-  resources :badge_set, :controller => :badges, :path => "archive" do 
+  match '/archive/page/:page' => 'badge_sets#index', :via => :get    
+
+
+  resources :badge_sets, :except => :show, :path => :archive do
     resources :badges do
       collection do
-        get 'page/:page', :action => :index
+        match 'page/:page', :action => :index, :via => :get
       end
     end
   end 
