@@ -9,6 +9,8 @@ class BadgeSet < ActiveRecord::Base
 
   has_many :badges, :dependent => :destroy 
   
+  mount_uploader :image, ImageUploader
+  
   
   validates :name, presence: true, :length => { :minimum => 2, :maximum => 50 }
 end

@@ -1,14 +1,17 @@
--unless @badge.badge_set.image.nil?
-  .badge-kh.badge-k-2h
+.badge-kh.badge-k-2h
+  -if badge.badge_set.image?
     .picture
-      %img{src:"/assets/rails.png"}
+      = image_tag badge.badge_set.image.badge.url 
 
-.information
-  %h3
-    ОАО
-    %br/
-    Роскомстар
+  .information
+    %h3
+      =badge.company
+      %br
+      =badge.profession
   
-.personality
-  %h1 Иван
-  %h1 Метродонт
+  .personality
+    %h1 
+      =badge.name
+    %h1 
+      =badge.surname
+    

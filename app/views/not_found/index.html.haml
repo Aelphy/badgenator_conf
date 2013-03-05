@@ -1,4 +1,10 @@
-!!!
-%html
-  %head
-    %title Badgenator
+%title Badgenator
+
+.picture
+  %img{ src: "/badgenator/nf.png", class: "center" }
+
+%h4
+  = "страница /#{params[:path]} не найдена"
+
+- response.status = 404 
+    
