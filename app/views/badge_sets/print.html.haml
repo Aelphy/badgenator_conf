@@ -5,9 +5,13 @@
   .btn-group.print-switcher{data: {toggle: 'buttons-radio'}}
     %button.btn.btn-primary.active= t 'views.badge_sets.print.landscape'
     %button.btn= t 'views.badge_sets.print.portrait'
+      
 
 .badges
-  - @badge_set.badges.each do |badge|
+  - @badge_set.badges.each_with_index do |badge, index|
     = render partial: 'badges/badge', :locals => { :badge => badge } 
-    .page-brake
-      &nbsp;
+    
+    -# if index % 2 == 0
+    -# .page-brake
+    -#    &nbsp;
+    

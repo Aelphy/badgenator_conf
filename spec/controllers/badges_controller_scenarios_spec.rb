@@ -101,6 +101,8 @@ describe "BadgesController Scenarios" do
     context "when click submit with correct fields" do
       before { page.fill_in "badge[name]", with: "Jonny" }
       before { page.fill_in "badge[company]", with: "PirateBay" }
+      before { page.fill_in "badge[surname]", with: "Smith" }
+      before { page.fill_in "badge[profession]", with: "Pirat" }
       before { page.click_button I18n.t("forms.labels.save") }
       
       it_behaves_like "success notice"

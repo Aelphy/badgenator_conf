@@ -6,7 +6,7 @@
           %li= message
 
 .well    
-  =form_for :badge_set, :url => { :action => :create }, :html => {:multipart => true} do |f|
+  =form_for @badge_set do |f|
   
     .form.form-horizontal
       .control-group
@@ -17,16 +17,19 @@
       .control-group
         =f.label :image, class: "control-label"
         .controls
-          =f.file_field :image, :class => ""
+          -if @badge_set.image?
+            %img{src: @badge_set.image.url}
+          =f.file_field :image
     
       .control-group
         =f.label :source, class: "control-label"
         .controls
-          =f.file_field :source, class: ""
+          =f.file_field :source
 
       %hr
       .control-group
         .controls
-          =f.button "Сохранить", class: "btn btn-primary"
+          %button.btn{type: "submit", class: "btn btn-primary"}
+            = t 'forms.labels.save'
           %button.btn{data: {click: badge_sets_url}}
             = t 'forms.labels.cancel'
