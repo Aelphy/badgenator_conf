@@ -18,7 +18,7 @@
         =f.label :image, class: "control-label"
         .controls
           -if @badge_set.image?
-            %img{src: @badge_set.image.url}
+            %img{src: @badge_set.image.badge.url}
           =f.file_field :image
     
       .control-group
