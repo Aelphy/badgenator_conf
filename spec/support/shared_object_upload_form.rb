@@ -22,6 +22,7 @@ shared_examples "object upload form" do
 
       unless object.new_record?
         should have_css "img[src='#{object.image.badge.url}']"
+        #should have_content "img[src=\"/uploads/badge_set/image/1/badge_logo.png\"]"
       end
       
       should have_css ".btn", count: 2
