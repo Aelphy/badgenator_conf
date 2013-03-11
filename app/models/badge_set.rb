@@ -1,11 +1,7 @@
 class BadgeSet < ActiveRecord::Base
-  attr_accessible :name
+  attr_accessible :name, :source, :image
 
-  attr_accessible :source
-  attr_accessor :source
-
-  attr_accessible :image
-  attr_accessor :image
+  attr_accessor :source, :image
 
   has_many :badges, dependent: :destroy 
   
