@@ -8,7 +8,7 @@ class BadgeSet < ActiveRecord::Base
   mount_uploader :image, ImageUploader  
   mount_uploader :source, CsvUploader
   
-  validates :name, presence: true, length: {:minimum => 2, :maximum => 50}  
+  validates :name, presence: true, length: {minimum: 2, maximum: 50}  
   
   before_validation :set_name
   
