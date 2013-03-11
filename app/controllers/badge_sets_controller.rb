@@ -36,13 +36,6 @@ class BadgeSetsController < ApplicationController
   def update
     respond_to do |format|
       if @badge_set.update_attributes(params[:badge_set])
-
-        unless params[:badge_set][:source].nil?
-          @badge_set.badges.each do |badge|
-            badge.delete
-          end
-        end
-
         format.html { redirect_to badge_set_badges_url(@badge_set), notice: I18n.t('controllers.badge_sets.actions.update.notice') }
       else
         format.html { render action: "edit" }
