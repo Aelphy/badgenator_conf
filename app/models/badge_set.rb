@@ -7,12 +7,12 @@ class BadgeSet < ActiveRecord::Base
   attr_accessible :image
   attr_accessor :image
 
-  has_many :badges, :dependent => :destroy 
+  has_many :badges, dependent: :destroy 
   
   mount_uploader :image, ImageUploader  
   mount_uploader :source, CsvUploader
   
-  validates :name, presence: true, :length => { :minimum => 2, :maximum => 50 }  
+  validates :name, presence: true, length: { :minimum => 2, :maximum => 50 }  
   
   before_validation :set_name
   
